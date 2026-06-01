@@ -15,7 +15,10 @@ st.markdown(
 unsafe_allow_html=True
 )
 
-st.subheader("Smart Waste Management System")
+st.markdown(
+    "<h2 style='text-align:center;'>Smart Waste Management System</h2>",
+    unsafe_allow_html=True
+)
 
 st.markdown("""
 
@@ -37,23 +40,27 @@ col1, col2 = st.columns(2)
 with col1:
     st.success("🤖 AI-based Waste Classification")
     st.success("♻️ Recycling Recommendations")
-
+    st.divider()
+    
 with col2:
     st.success("🌱 Sustainability Awareness")
     st.success("📊 Future Analytics Dashboard")
 
     st.divider()
-    st.markdown("### 📈 Platform Metrics")
+    st.markdown(
+        "<h2 style='text-align:left;'>📈 Platform Metrics</h2>",
+        unsafe_allow_html=True
+    )
 
-m1, m2, m3 = st.columns(3)
+left, center, right = st.columns([1,1,1])
 
-with m1:
+with left:
     st.metric("Waste Categories", "5")
 
-with m2:
+with center:
     st.metric("AI Accuracy", "85%")
 
-with m3:
+with right:
     st.metric("Recycling Tips", "Available")
 
 st.divider()
