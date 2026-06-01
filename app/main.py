@@ -1,29 +1,92 @@
 import streamlit as st
+from prediction import predict_waste
+from utils import get_recycling_tip
 
 st.set_page_config(
-    page_title="EcoTrack AI",
-    page_icon="♻️",
-    layout="wide"
+page_title="EcoTrack AI",
+page_icon="♻️",
+layout="wide"
 )
 
-st.title("♻️ EcoTrack AI")
+# Header
+
+st.markdown(
+"<h1 style='text-align:center;'>♻️ EcoTrack AI</h1>",
+unsafe_allow_html=True
+)
+
 st.subheader("Smart Waste Management System")
 
-st.write("""
-Welcome to EcoTrack AI.
+st.markdown("""
 
-This platform helps classify waste and promotes
-sustainable recycling practices.
-""")
+<div style='text-align:center; font-size:18px;'>
+EcoTrack AI uses Artificial Intelligence to identify waste from images,
+provide recycling recommendations, and promote sustainable waste disposal
+for a cleaner and greener environment.
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# Features Section
+
+st.markdown("### 🚀 Features")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.success("🤖 AI-based Waste Classification")
+    st.success("♻️ Recycling Recommendations")
+
+with col2:
+    st.success("🌱 Sustainability Awareness")
+    st.success("📊 Future Analytics Dashboard")
+
+    st.divider()
+    st.markdown("### 📈 Platform Metrics")
+
+m1, m2, m3 = st.columns(3)
+
+with m1:
+    st.metric("Waste Categories", "5")
+
+with m2:
+    st.metric("AI Accuracy", "85%")
+
+with m3:
+    st.metric("Recycling Tips", "Available")
+
+st.divider()
+
+# Upload Section
+st.markdown("### 📤 Upload Waste Image")
 
 uploaded_file = st.file_uploader(
     "Upload a waste image",
     type=["jpg", "jpeg", "png"]
 )
 
-if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded Waste Image")
+# Prediction Section
 
-    st.success("Image uploaded successfully!")
+if uploaded_file:
 
-    st.info("AI prediction module coming soon...")
+    st.image(
+        uploaded_file,
+        caption="Uploaded Waste Image",
+        width=400
+    )
+
+    waste_type, confidence = predict_waste(uploaded_file)
+    tip = get_recycling_tip(waste_type)
+
+    st.markdown("### 📊 Classification Results")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.success(f"♻️ Waste Type: {waste_type}")
+        st.progress(confidence / 100)
+        st.caption(f"Confidence Score: {confidence}%")
+
+    with col2:
+        st.info(f"💡 Recycling Tip: {tip}")
