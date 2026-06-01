@@ -1,9 +1,13 @@
-# Screenshots
+## Screenshots
 
-This folder contains screenshots of the EcoTrack AI application.
+### Home Dashboard
 
-## Available Screenshots
+![Home Dashboard](screenshots/home_dashboard.png)
 
-- home_dashboard.png — Main dashboard view
-- upload_page.png — Waste image upload interface
-- plastic_detection.png — Plastic waste classification result
+### Upload Page
+
+![Upload Page](screenshots/upload_page.png)
+
+### Plastic Detection
+
+![Plastic Detection](screenshots/plastic_detection.png)
