@@ -1,4 +1,5 @@
 # EcoTrack-AI
+
 AI-powered Smart Waste Management System for waste classification, recycling guidance, and sustainability analytics.
 
 ## Features
@@ -17,6 +18,25 @@ AI-powered Smart Waste Management System for waste classification, recycling gui
 * Pandas
 * NumPy
 
+## Installation
+
+### Clone the Repository
+
+git clone https://github.com/anupala21/EcoTrack-AI.git
+
+
+### Navigate to the Project Directory
+
+cd EcoTrack-AI
+
+### Install Dependencies
+
+pip install -r requirements.txt
+
+### Run the Application
+
+streamlit run app/main.py
+
 ## Project Structure
 
 EcoTrack-AI/
@@ -33,9 +53,24 @@ EcoTrack-AI/
 ## Current Progress
 
 * Repository Setup Complete
-* Open Source Structure Added
 * Streamlit Interface Added
+* Waste Classification Module Added
+* Recycling Recommendation System Added
 * AI Model Development In Progress
+
+## Screenshots
+
+### Home Dashboard
+
+![Home Dashboard](screenshots/home_dashboard.png)
+
+### Upload Page
+
+![Upload Page](screenshots/upload_page.png)
+
+### Plastic Detection
+
+![Plastic Detection](screenshots/plastic_detection.png)
 
 ## Future Enhancements
 
